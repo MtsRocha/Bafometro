@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-FILE* AbreArquivo(char modo, char caminho[30]){ //Função que abre o arquivo, modo de abrir//caminho do arquivo
+FILE* AbreArquivo(char modo, char caminho[30]){ //Função que abre o arquivo(modo de abrir//caminho do arquivo)
     FILE *arquivo;
     switch(modo){
         case 'g':
