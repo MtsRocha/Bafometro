@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-FILE* AbreArquivo(char modo, char caminho[30]){ //Função que abri o arquivo, modo de abrir//caminho do arquivo)
+FILE* AbreArquivo(char modo, char caminho[30]){ //FunÃ§Ã£o que abre o arquivo, modo de abrir//caminho do arquivo)
     FILE *arquivo;
     switch(modo){
         case 'g':
@@ -21,18 +21,18 @@ FILE* AbreArquivo(char modo, char caminho[30]){ //Função que abri o arquivo, mod
     return arquivo;
 }
 
-void FechaArquivo(FILE *arquivo){//Função que fecha o arquivo
+void FechaArquivo(FILE *arquivo){//FunÃ§Ã£o que fecha o arquivo
     fclose(arquivo);
 }
 
-void Cadastra(int dia, int mes, int ano, char nome[30], int cpf, float alcool){ //Função de Cadastro da ficha do motorista
+void Cadastra(int dia, int mes, int ano, char nome[30], int cpf, float alcool){ //FunÃ§Ã£o de Cadastro da ficha do motorista
     FILE *arquivo;
     arquivo = AbreArquivo('a', "relatorio.txt");
     fprintf(arquivo, "%d %d %d %s %d %f\n", dia, mes, ano, nome, cpf, alcool);
     FechaArquivo(arquivo);
 }
 
-void Listar(){ //Função que imprime e lista a ficha dos motoristas
+void Listar(){ //FunÃ§Ã£o que imprime e lista a ficha dos motoristas
     FILE *arquivo;
     int dia, mes, ano,cpf;
     char nome[30];
@@ -48,7 +48,7 @@ void Listar(){ //Função que imprime e lista a ficha dos motoristas
     FechaArquivo(arquivo);
 }
 
-int menu(){ //Função do menu
+int menu(){ //FunÃ§Ã£o do menu
     int opcao;
     printf("             ********          *                   **===\n");
     printf("             *        *        **                 ***====\n");
@@ -123,14 +123,14 @@ int main(){
                             scanf ("%f",&alcool);
                             setbuf(stdin,NULL);
 
-                            if ((alcool  >= 0) && (alcool<= 50))//Sanções
+                            if ((alcool  >= 0) && (alcool<= 50))//SanÃ§Ãµes
                             {
                                 printf ("Motorista liberado!\n");
                                 liberados=liberados+1;
                             }
                             else if ((alcool >= 51) && (alcool <= 200))
                             {
-                                printf ("Retenção do veículo e da carteira! O veiculo sera liberado assim que um condutor habilitado se apresentar");
+                                printf ("RetenÃ§Ã£o do veÃ­culo e da carteira! O veiculo sera liberado assim que um condutor habilitado se apresentar");
                                 veiculos=veiculos+1;
                             }
                             else if ((alcool >= 201) && (alcool <= 400))
@@ -164,7 +164,7 @@ int main(){
                 porcMulta=(multa*100/quantFT);
                 porcDetento=(detento*100/quantFT);
 
-                printf ("\n\n||---------------------------RELATORIO ESTATISTICAS----------------------------||\n\n");//Imprime Estatísticas
+                printf ("\n\n||---------------------------RELATORIO ESTATISTICAS----------------------------||\n\n");//Imprime EstatÃ­sticas
                 printf ("      Quantidade de motoristas abordados: %d\n", quantFT);
                 printf ("      Porcentagem dos que se recusaram a fazer o teste: %2.f por cento \n", porcRecusa);
                 printf ("      Porcentagem de motoristas liberados: %.2f por cento\n", porcLiberados);
